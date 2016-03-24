@@ -1,0 +1,63 @@
+{% set main = {
+  "phone1": "8 (922) 000-00-00",
+  "phone2": "8 (922) 000-00-00",
+  "menu": [
+    {"href": "#", "title": "о нас", "active": true},
+    {"href": "#", "title": "команда"},
+    {"href": "#", "title": "контакты"},
+    {"href": "#", "title": "Новости"},
+    {"href": "#", "title": "история"},
+    {"href": "#", "title": "галерея"},
+    {"href": "#", "title": "primier-сервис"},
+    {"href": "#", "title": "улсуги"}
+  ],
+  "contact": "+7 351 890 78 67<br>г. челябинск,<br>ул. Бр.кашириных, 121"
+} %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+      <link rel="stylesheet" href="css/main.css" />
+      <link href='https://fonts.googleapis.com/css?family=Cuprum&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+      <title>{% block title %}{% endblock %} - Premier Clinik</title>
+      <meta charset='utf-8'>
+      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+      <meta name='description' content=''>
+	  <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% endblock %}
+</head>
+<body class="page">
+    <div class="page__inner">
+      <div class="header">
+        {% block header %}
+          {% include 'header.html' %}
+        {% endblock %}
+      </div>
+      <div class="menu menu_header">
+        <div class="container">
+          <ul class="menu__list">
+            {% for item in main.menu -%}
+              <li class="menu__item {% if item.active %} menu__item_active {% endif %}">
+                <a href="{{item.href}}" class="menu__link">{{item.title}}</a>
+              </li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        {% block content %}{% endblock %}
+      </div>
+      <div class="page__footer"></div>
+    </div>
+    <div class="footer">
+      {% block footer %}
+        {% include 'footer.html' %}
+      {% endblock %}
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="ui/customCarousel/customCarousel.js"></script>
+    {% block script %}{% endblock %}
+    <script src='js/main.js'></script>
+</body>
+</html>

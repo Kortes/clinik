@@ -1,0 +1,12 @@
+<div class="container clearfix">
+	<div class="footer__contact">{{main.contact}}</div>
+	<div class="menu menu_footer">
+		<ul class="menu__list">
+            {% for item in main.menu -%}
+              <li class="menu__item {% if item.active %} menu__item_active {% endif %}">
+                <a href="{{item.href}}" class="menu__link">{{item.title}}</a>
+              </li>
+            {%- endfor %}
+        </ul>
+	</div>
+</div>

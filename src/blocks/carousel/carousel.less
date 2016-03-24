@@ -1,0 +1,101 @@
+@import "../main/var";
+
+.carousel{
+	margin-bottom: 20px;
+
+	&__wrapper{
+		overflow: hidden;
+		height: 330px;
+		position: relative;
+	}
+
+	&__arrow{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 40px;
+		z-index: 10;
+
+		&:before{
+			content: "";
+			width: 50px;
+			height: 50px;
+			border-bottom: 2px solid @c-base;
+			border-left: 2px solid @c-base;
+			position: absolute;
+			top: 50%;
+			left: 0;
+		}
+
+		&_prev{
+			left: 0;
+
+			&:before{
+				transform: translate(0, -50%) scaleX(0.5) rotate(45deg);
+			}
+		}
+
+		&_next{
+			right: 0;
+
+			&:before{
+				transform: translate(-25%, -50%) scaleX(0.5) rotate(225deg);
+			}
+		}
+	}
+
+	&__item{
+		position: relative;
+		width: 100%;
+	}
+
+	&__link{
+		display: block;
+		height: 330px;
+		text-decoration: none;
+		color: @c-base;
+		font-size: 48px;
+	}
+
+	&__image{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 0;
+
+		img{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__text{
+		position: absolute;
+		top: 50px;
+		bottom: 50px;
+		left: 70px;
+		right: 70px;
+		z-index: 1;
+	}
+
+	&__control{
+		text-align: center;
+		margin-top: 10px;
+
+		&-item{
+			display: inline-block;
+			width: 5px;
+			height: 5px;
+			margin: 0 4px;
+			background: @c-base;
+
+			&_active{
+				background: @c-line;
+			}
+		}
+	}
+}
