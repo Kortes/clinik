@@ -1,27 +1,27 @@
 {% extends "base.html" %}
 
-{% set home = {
+{% set page = {
   "title": "О клиники",
   "text": "<p>В отличие от амбулатории и здравпункта, поликлиника обладает возможностью оказания спец. медпомощи широкого диапазона, для чего обеспечена врачамиспециалистами и оснащена необходимой леч. и диагностич. аппаратурой и лабораторным оборудованием.</p><p>Важной частью работы поликлиники является диспансеризация: отбор лиц, подлежащих диспансерному наблюдению, нуждающихся в сан.-кур. лечении, спец. лечении, систематич. изучение труда и быта населения. В поликлинике проводится экспертиза временной нетрудоспособности больных, освобождение их от работы по болезни с выдачей листка нетрудоспособности, направление нуждающихся на стационарное лечение, а также направление на врачебнотрудо-вую экспертную комиссию лиц с признаками стойкой утраты трудоспособности. Дети до 14 лет включительно обслуживаются в детских поликлиниках, к-рые также работают по участковому принципу. В целях снижения заболеваемости поликлиники Коломны проводят среди населения большую профилактическую работу.</p>",
   "services": [
-  	{"link": "#", "title": "Услуга 1"},
-  	{"link": "#", "title": "Услуга 2"},
-  	{"link": "#", "title": "Услуга 3"},
-  	{"link": "#", "title": "Услуга 4"},
-  	{"link": "#", "title": "Услуга 5"},
-  	{"link": "#", "title": "Услуга 6"},
-  	{"link": "#", "title": "Услуга 7"},
-  	{"link": "#", "title": "Услуга 8"}
+  	{"link": "/service.html", "title": "Услуга 1"},
+  	{"link": "/service.html", "title": "Услуга 2"},
+  	{"link": "/service.html", "title": "Услуга 3"},
+  	{"link": "/service.html", "title": "Услуга 4"},
+  	{"link": "/service.html", "title": "Услуга 5"},
+  	{"link": "/service.html", "title": "Услуга 6"},
+  	{"link": "/service.html", "title": "Услуга 7"},
+  	{"link": "/service.html", "title": "Услуга 8"}
   ],
   "carousel": [
-  	{"link": "#", "text": "Акция<br>на услугу 2", "image": "/images/carousel.jpg"},
-  	{"link": "#", "text": "Акция<br>на услугу 4", "image": "/images/carousel.jpg"},
-  	{"link": "#", "text": "Акция<br>на услугу 6", "image": "/images/carousel.jpg"},
-  	{"link": "#", "text": "Акция<br>на услугу 8", "image": "/images/carousel.jpg"}
+  	{"link": "/service.html", "text": "Акция<br>на услугу 2", "image": "./images/carousel.jpg"},
+  	{"link": "/service.html", "text": "Акция<br>на услугу 4", "image": "./images/carousel.jpg"},
+  	{"link": "/service.html", "text": "Акция<br>на услугу 6", "image": "./images/carousel.jpg"},
+  	{"link": "/service.html", "text": "Акция<br>на услугу 8", "image": "./images/carousel.jpg"}
   ]
 } %}
 
-{% block title %}{{ home.title }}{% endblock %}
+{% block title %}{{ page.title }}{% endblock %}
 
 {% block content %}
 	<div class="carousel">
@@ -29,7 +29,7 @@
 			<a href="#" class="carousel__arrow carousel__arrow_prev"></a>
 			<a href="#" class="carousel__arrow carousel__arrow_next"></a>
 			<ul class="carousel__list">
-				{% for item in home.carousel -%}
+				{% for item in page.carousel -%}
 	              <li class="carousel__item">
 	                <a href="{{item.link}}" class="carousel__link">
 	                	<span class="carousel__image">
@@ -42,13 +42,13 @@
 			</ul>
 		</div>
 		<ul class="carousel__control">
-			{% for item in home.carousel -%}
+			{% for item in page.carousel -%}
 				<li class="carousel__control-item {% if loop.first %} carousel__control-item_active {% endif %}"></li>
 			{%- endfor %}
 		</ul>
 	</div>
 	<ul class="service">
-		{% for item in home.services -%}
+		{% for item in page.services -%}
 			<li class="service__item">
 				<a href="{{item.link}}" class="service__link">
 					<span class="service__wrapper">
@@ -58,6 +58,6 @@
 			</li>
 		{%- endfor %}
 	</ul>
-	<h1>{{ home.title }}</h1>
-	{{ home.text }}
+	<h1>{{ page.title }}</h1>
+	{{ page.text }}
 {% endblock %}

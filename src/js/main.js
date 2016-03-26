@@ -10,5 +10,10 @@ $(document).ready(function() {
         	self.find(".carousel__control-item").eq(ui.currentIndex).addClass("carousel__control-item_active");
         }
 	});
+
+    $(".review__list").customCarousel({
+        nextSelector: $(".review__arrow_next"),
+        prevSelector: $(".review__arrow_prev")
+    });
 	
 });

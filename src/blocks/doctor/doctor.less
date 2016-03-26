@@ -1,0 +1,105 @@
+@import "../main/var";
+
+.doctor{
+	&__item{
+		margin-bottom: 25px;
+	}
+
+	&__card{
+		border: 1px solid @c-line;
+		padding: 5px;
+		display: block;
+		box-sizing: border-box;
+		position: relative;
+
+		&:hover{
+			border-color: @c-base;
+			background-image: linear-gradient(-50deg, @c-base 0%, #aa77d3 52%, #784e9b 100%);
+
+			&:before,
+			&:after{
+				content: '';
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				border-top: 1px solid @c-base;
+				border-left: 1px solid @c-base;
+			}
+
+			&:before{
+				top: -5px;
+				left: -5px;
+			}
+
+			&:after{
+				bottom: -5px;
+				right: -5px;
+				transform: rotate(180deg);
+			}
+
+			.doctor__title{
+				color: @c-white;
+			}
+
+			.doctor__button{
+				color: @c-base;
+				background: @c-white;
+			}
+		}
+	}
+
+	&__wrapper{
+		overflow: hidden;
+		position: relative;
+	}
+
+	&__image{
+		float:left;
+		width: 230px;
+
+		img{
+			width: auto;
+			height: auto;
+			max-width: 230px;
+			display: block;
+		}
+	}
+
+	&__body{
+		padding:0 0 30px 250px;
+
+		p{
+			margin-bottom: 5px;
+		}
+	}
+
+	&__title{
+		text-transform: uppercase;
+		color: @c-base;
+		font-size: 24px;
+		margin-bottom: 5px;
+	}
+
+	&__button{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		text-decoration: none;
+		color: @c-white;
+		background: @c-line;
+		line-height: 30px;
+		padding: 0 15px;
+	}
+
+	&__photo{
+		float: left;
+		margin: 0 30px 30px 0;
+		max-width: 40%;
+
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+		}
+	}
+}

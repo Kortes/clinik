@@ -1,0 +1,68 @@
+@import "../main/var";
+
+.review{
+	&__carousel{
+		padding: 0 80px;
+		position: relative;
+	}
+
+	&__arrow{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 40px;
+		z-index: 10;
+
+		&:before{
+			content: "";
+			width: 50px;
+			height: 50px;
+			border-bottom: 2px solid @c-base;
+			border-left: 2px solid @c-base;
+			position: absolute;
+			top: 50%;
+			left: 0;
+		}
+
+		&_prev{
+			left: 0;
+
+			&:before{
+				transform: translate(0, -50%) scaleX(0.5) rotate(45deg);
+			}
+		}
+
+		&_next{
+			right: 0;
+
+			&:before{
+				transform: translate(-25%, -50%) scaleX(0.5) rotate(225deg);
+			}
+		}
+	}
+
+	&__item{
+		width: 100%;
+	}
+
+	&__image{
+		float:left;
+		width: 125px;
+		display: block;
+
+		img{
+			width: auto;
+			height: auto;
+			max-width: 125px;
+		}
+	}
+
+	&__text{
+		display: block;
+		padding-left: 140px;
+
+		p{
+			margin-bottom: 5px;
+		}
+	}
+}

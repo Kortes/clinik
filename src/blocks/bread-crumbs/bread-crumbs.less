@@ -1,0 +1,29 @@
+@import "../main/var";
+
+.bread-crumbs{
+	font-size: 11px;
+	color: @c-lightgrey;
+	text-transform: uppercase;
+
+	&__item{
+		display: inline-block;
+	}
+
+	&__separator{
+		padding: 0 5px;
+		display: inline-block;
+	}
+
+	&__link{
+		color: @c-lightgrey;
+		text-decoration: none;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	& + h1{
+		margin-top:5px;
+	}
+}
